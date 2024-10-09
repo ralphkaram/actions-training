@@ -1,0 +1,20 @@
+name: Hello World Action
+description: Greets submitter with time of day
+on:  push
+
+inputs:
+  who-to-greet: 
+    description: Who would you like to greet?
+    required: true
+    default: World
+outputs:
+  time-of-day:
+    description: What time of day were you greeted?
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    INPUT-WHO-TO-GREET: ${{ inputs.who-to-greet }} 
+    
