@@ -19,4 +19,4 @@ jobs:
         with: 
           who-to-greet: ${{ github.actor }}
       - name: Display Time
-        run: echo "The time of day is ${{ steps.hello-action.time-of-day }} when the action said hello"
+        run: echo "The time of day is ${{ steps.hello-action.time }} when the action said hello"

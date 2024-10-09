@@ -1,19 +1,21 @@
-name: Hello World Action
-description: Greets submitter with time of day
-on:  push
+name: Hello, World!
+description: Greet someone and record the time
+author: GitHub Actions
 
+# Define your inputs here.
 inputs:
-  who-to-greet: 
-    description: Who would you like to greet?
+  who-to-greet:
+    description: Who to greet
     required: true
     default: World
+
+# Define your outputs here.
 outputs:
-  time-of-day:
-    description: What time of day were you greeted?
+  time:
+    description: The time we greeted you
 
 runs:
   using: docker
   image: Dockerfile
   env:
-    INPUT-WHO-TO-GREET: ${{ inputs.who-to-greet }} 
-    
+    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
