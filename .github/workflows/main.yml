@@ -5,7 +5,7 @@ on:
   push:
     branches: [ main ]
     paths: [ hello-world-docker-action/** ]
-  workflow-dispatch:
+workflow-dispatch:
 
 jobs:
   test-action:
