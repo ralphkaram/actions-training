@@ -20,4 +20,4 @@ jobs:
         with: 
           who-to-greet: '@ralphkaram'
       - name: Display Time
-        run: echo: "The time fo day is ${{ steps.hello-action.output-time }} when the action said hello"
+        run: echo "The time fo day is ${{ steps.hello-action.output-time }} when the action said hello"
