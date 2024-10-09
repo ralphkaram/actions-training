@@ -1,4 +1,4 @@
-name: Hellow World Docker Action
+name: Hello World Docker Action
 description: Runs hello world from Docker
 
 on:
