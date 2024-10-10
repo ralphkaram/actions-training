@@ -21,6 +21,7 @@ jobs:
         steps:
             - run: |
                 echo "🎉 The job was triggered by event: ${{ github.event_name }}"
+                echo "You chose the ${{ inputs.environment }} environment"
                 echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
             - uses: actions/checkout@v3.3.0
 
