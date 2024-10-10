@@ -31,6 +31,9 @@ jobs:
                 tree
     Test:
         runs-on: ubuntu-latest
+        needs: Build
+        environment:
+            name: test
         steps:
             - run: |
                 echo "🎉 The job was triggered by event: ${{ github.event_name }}"
@@ -38,12 +41,18 @@ jobs:
 
     Load-Test:
         runs-on: ubuntu-latest
+        needs: [Test]
+        environment:
+            name: load-test
         steps:
             - run: |
                 echo "🎉 The job was triggered by event: ${{ github.event_name }}"
                 echo "Testing..."
     Production:
         runs-on: ubuntu-latest
+        needs: [Test, Load-Test]
+        environment:
+            name: production
         steps:
             - run: |
                 echo "Step 1 Deploying..."
