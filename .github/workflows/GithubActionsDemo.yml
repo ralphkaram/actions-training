@@ -43,7 +43,7 @@ jobs:
     Load-Test:
         runs-on: ubuntu-latest
         if: github.event_name == 'workflow_dispatch'
-        needs: [Test]
+        needs: [build]
         environment:
             name: load-test
         steps:
@@ -59,16 +59,16 @@ jobs:
         steps:
             - run: |
                 echo "Step 1 Deploying..."
-                sleep 10
+                sleep 5
             - run: |
                 echo "Step 2 Deploying..."
-                sleep 10
+                sleep 5
             - run: |
                 echo "Step 3 Deploying..."
-                sleep 10
+                sleep 5
             - run: |
                 echo "Step 4 Deploying..."
-                sleep 10
+                sleep 5
             - run: |
                 echo "Step 5 Deploying..."
-                sleep 10
+                sleep 5
